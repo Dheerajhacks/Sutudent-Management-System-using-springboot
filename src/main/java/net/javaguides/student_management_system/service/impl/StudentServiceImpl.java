@@ -1,12 +1,9 @@
 package net.javaguides.student_management_system.service.impl;
 
 import org.springframework.stereotype.Service;
-
 import net.javaguides.student_management_system.entity.Student;
 import net.javaguides.student_management_system.repository.StudentRepository;
-
 import java.util.List;
-
 import net.javaguides.student_management_system.service.StudentService;
 
 @Service
@@ -25,6 +22,18 @@ public class StudentServiceImpl implements StudentService {
 	@Override
 	public Student saveStudent(Student student) {
 		return studentRepository.save(student);
+	}
+	@Override
+	public Student getStudentById(Long id) {
+		return studentRepository.findById(id).get();
+	}
+	@Override
+	public Student updateStudent(Student student) {
+		return studentRepository.save(student);
+	}
+	@Override
+	public void deleteStudentById(Long id) {
+		studentRepository.deleteById(id);
 	}
 }
  

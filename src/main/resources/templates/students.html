@@ -9,7 +9,6 @@
 	crossorigin="anonymous">
 </head>
 <body>
-<!--  
 <nav class="navbar navbar-expand-md bg-dark navbar-dark">
 
   <a class="navbar-brand" href="#">Student Management System</a>
@@ -28,8 +27,7 @@
       </li>
     </ul>
   </div>
-</nav>-->
-
+</nav>
 	<div class ="container">
 		<div class = "row">
 			<h1> List Students </h1>
@@ -55,6 +53,12 @@
 					<td th:text = "${student.firstName}"></td>
 					<td th:text = "${student.lastName}"></td>
 					<td th:text = "${student.email}"></td>
+					<td>
+						<a th:href = "@{/students/edit/{id}(id = ${student.id})}" 
+						class = "btn btn-primary">Update</a>
+						<a th:href = "@{/students/{id}(id = ${student.id})}" 
+						class = "btn btn-danger">Delete</a>
+					</td>
 					
 				</tr>
 			</tbody>
